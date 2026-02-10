@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L2 Conformance Example — OpenOrigin</title>
+
+  <!-- OpenOrigin L1 (still present for backwards compatibility) -->
+  <meta name="openorigin" content="human-ai-assisted">
+
+  <!-- OpenOrigin L2: Structured JSON-LD with roles and tools -->
+  <script type="application/ld+json">
+  {
+    "@context": [
+      "https://schema.org",
+      "https://openorigin.dev/schema/v1"
+    ],
+    "@type": "Article",
+    "headline": "Example Article",
+    "author": {
+      "@type": "Person",
+      "name": "Jane Smith"
+    },
+    "oo:origin": {
+      "@type": "oo:ContentOrigin",
+      "oo:category": "human-ai-assisted",
+      "oo:conformance": "L2",
+      "oo:author": {
+        "name": "Jane Smith",
+        "role": "primary-author"
+      },
+      "oo:tools": [
+        {
+          "name": "Claude",
+          "provider": "Anthropic",
+          "role": "research"
+        }
+      ],
+      "oo:date": "2026-02-10"
+    }
+  }
+  </script>
+
+</head>
+<body>
+  <article>
+    <h1>Example Article</h1>
+    <p>This article demonstrates OpenOrigin Level 2 conformance.</p>
+    <p>It includes structured data identifying the author, the AI tools used, and their roles.</p>
+  </article>
+</body>
+</html>
