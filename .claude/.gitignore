@@ -1,0 +1,38 @@
+# Binary assets - protect repo size
+# UX review screenshots, mockups, and other images should not be committed.
+# They're useful during the review cycle but the UXR markdown captures the findings.
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.bmp
+*.tiff
+*.svg
+*.ico
+
+# Video/audio artifacts
+*.mp4
+*.mov
+*.avi
+*.mp3
+*.wav
+
+# Design files
+*.psd
+*.sketch
+*.fig
+*.xd
+*.ai
+
+# Archives
+*.zip
+*.tar.gz
+*.rar
+
+# Large generated files
+*.pdf
+
+# Machine-specific
+CLAUDE.local.md
+settings.local.json

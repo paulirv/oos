@@ -1,0 +1,1 @@
+/Users/paulirving/.claude/templates/journal/lesson.md

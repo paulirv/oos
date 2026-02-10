@@ -1,0 +1,61 @@
+{
+  "projectContext": {
+    "name": "oos",
+    "type": "web",
+    "owner": "Paul Irving",
+    "company": "Insite Web Publishing, Inc."
+  },
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch",
+      "Bash(ls:*)",
+      "Bash(tree:*)",
+      "Bash(cat:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "Bash(wc:*)",
+      "Bash(git:*)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit",
+        "hooks": [{"type": "command", "command": ".claude/hooks/check-branch.sh"}]
+      },
+      {
+        "matcher": "Write",
+        "hooks": [{"type": "command", "command": ".claude/hooks/check-branch.sh"}]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {"type": "command", "command": ".claude/hooks/validate-commit-message.sh"},
+          {"type": "command", "command": ".claude/hooks/pre-release-checklist.sh"}
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit",
+        "hooks": [{"type": "command", "command": ".claude/hooks/requirements-sync-reminder.sh"}]
+      },
+      {
+        "matcher": "Write",
+        "hooks": [{"type": "command", "command": ".claude/hooks/requirements-sync-reminder.sh"}]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {"type": "command", "command": ".claude/hooks/session-summary-reminder.sh"},
+          {"type": "command", "command": ".claude/hooks/risk-review-reminder.sh"},
+          {"type": "command", "command": ".claude/hooks/sprint-completion-check.sh"}
+        ]
+      }
+    ]
+  }
+}

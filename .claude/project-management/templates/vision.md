@@ -1,0 +1,1 @@
+/Users/paulirving/.claude/templates/project-management/vision.md

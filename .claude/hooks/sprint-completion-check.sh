@@ -1,0 +1,1 @@
+/Users/paulirving/.claude/hooks/sprint-completion-check.sh

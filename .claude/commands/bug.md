@@ -1,0 +1,1 @@
+/Users/paulirving/.claude/commands/bug.md
