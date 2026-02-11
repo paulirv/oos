@@ -32,7 +32,7 @@ Define new properties within the schema.org ecosystem:
   "author": {"@type": "Person", "name": "Jane Smith"},
   "openOrigin": {
     "@type": "ContentOrigin",
-    "category": "human-ai-assisted",
+    "category": "ai-assisted",
     "tools": [...]
   }
 }
@@ -48,7 +48,7 @@ Define an OOS JSON-LD context that can coexist with schema.org:
   ],
   "@type": "Article",
   "author": {"@type": "Person", "name": "Jane Smith"},
-  "oo:origin": "human-ai-assisted"
+  "oo:origin": "ai-assisted"
 }
 ```
 

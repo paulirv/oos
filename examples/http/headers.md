@@ -5,7 +5,7 @@
 ```http
 HTTP/1.1 200 OK
 Content-Type: text/html; charset=utf-8
-OpenOrigin: human-ai-assisted
+OpenOrigin: ai-assisted
 ```
 
 ## L2: Structured Header
@@ -15,8 +15,8 @@ Using the Structured Fields syntax (RFC 8941):
 ```http
 HTTP/1.1 200 OK
 Content-Type: application/json
-OpenOrigin: human-ai-assisted
-OpenOrigin-Detail: category="human-ai-assisted"; author="Jane Smith"; tool="Claude"; tool-role="research"; date="2026-02-10"
+OpenOrigin: ai-assisted
+OpenOrigin-Detail: category="ai-assisted"; author="Jane Smith"; tool="Claude"; tool-role="research"; date="2026-02-10"
 ```
 
 ## API Response Example
@@ -26,13 +26,13 @@ For JSON API responses, include origin in the response body or headers:
 ```http
 HTTP/1.1 200 OK
 Content-Type: application/json
-OpenOrigin: ai-human-edited
+OpenOrigin: ai-created
 
 {
   "title": "Generated Report",
   "content": "...",
   "_openorigin": {
-    "category": "ai-human-edited",
+    "category": "ai-created",
     "tools": [{"name": "Claude", "role": "drafting"}],
     "author": {"name": "API Consumer", "role": "reviewer"}
   }

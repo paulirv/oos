@@ -2,7 +2,7 @@
 title: "Example Blog Post"
 date: 2026-02-10
 author: Jane Smith
-openorigin: human-ai-assisted
+openorigin: ai-assisted
 openorigin_detail:
   conformance: L2
   author:

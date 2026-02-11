@@ -17,7 +17,7 @@ The AI content transparency conversation is stuck in binary mode. The reality is
 L1 conformance is one meta tag:
 
 ```html
-<meta name="openorigin" content="human-ai-assisted">
+<meta name="openorigin" content="ai-assisted">
 ```
 
 That's it. See [spec/success-criteria/level-1.md](spec/success-criteria/level-1.md) for the full L1 specification.
@@ -68,9 +68,9 @@ docs/                    # Project documentation
 ## Status
 
 Working draft. The spec framework is in place. Active work on:
-- Finalizing L1 origin vocabulary
+- L1 origin vocabulary finalized (4-value aligned with IETF/dweekly proposals)
 - Defining the JSON-LD schema
-- Prior art deep research
+- Prior art research complete
 - Dogfooding on peabod.com
 
 ## Links

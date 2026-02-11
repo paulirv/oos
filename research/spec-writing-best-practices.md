@@ -285,19 +285,18 @@ If your spec does exactly what an existing standard does, adoption is near-impos
 
 ## 7. Vocabulary Alignment Question
 
-Current OOS uses 5 categories:
-- `human`
-- `human-ai-assisted`
-- `ai-human-edited`
-- `ai-human-reviewed`
-- `ai-generated`
+**Decision resolved:** OOS L1 now uses a 4-value vocabulary aligned with emerging industry standards:
+- `human` — Content created entirely by humans
+- `ai-assisted` — Human-created with AI assistance
+- `ai-created` — AI-generated with human oversight
+- `ai-generated` — AI-generated with no meaningful human input
 
 The emerging industry vocabulary:
 - IETF: `none`, `ai-modified`, `ai-originated`, `machine-generated`
 - dweekly: `none`, `ai-assisted`, `ai-generated`, `autonomous`
 - IPTC: `trainedAlgorithmicMedia`, `compositeWithTrainedAlgorithmicMedia`
 
-**Decision needed:** Should OOS align its L1 vocabulary with these existing proposals? The 5-category spectrum is richer (distinguishing edited vs. reviewed), but alignment with the emerging 4-tier model would aid adoption and interoperability. One option: use the standard 4-tier at L1, with OOS's richer vocabulary available at L2.
+The richer distinctions (edited vs. reviewed) are available at L2 through the AI role categories vocabulary.
 
 ---
 

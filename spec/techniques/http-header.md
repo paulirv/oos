@@ -11,7 +11,7 @@ HTTP response headers provide origin declarations at the transport layer. Ideal 
 ## L1 Implementation
 
 ```http
-OpenOrigin: human-ai-assisted
+OpenOrigin: ai-assisted
 ```
 
 ### Valid Values
@@ -21,8 +21,8 @@ Same controlled vocabulary as the HTML meta tag.
 ## L2 Supplement
 
 ```http
-OpenOrigin: human-ai-assisted
-OpenOrigin-Detail: category="human-ai-assisted"; author="Jane Smith"; tool="Claude"; tool-role="research"
+OpenOrigin: ai-assisted
+OpenOrigin-Detail: category="ai-assisted"; author="Jane Smith"; tool="Claude"; tool-role="research"
 ```
 
 The `OpenOrigin-Detail` header uses Structured Fields syntax (RFC 8941).

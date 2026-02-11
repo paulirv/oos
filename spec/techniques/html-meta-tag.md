@@ -11,18 +11,17 @@ The simplest implementation path. A single `<meta>` tag in the document `<head>`
 ## L1 Implementation
 
 ```html
-<meta name="openorigin" content="human-ai-assisted">
+<meta name="openorigin" content="ai-assisted">
 ```
 
 ### Valid Values
 
 | Value | Meaning |
 |-------|---------|
-| `human` | Entirely human-created |
-| `human-ai-assisted` | Human-created with AI assistance |
-| `ai-human-edited` | AI-generated, substantially human-edited |
-| `ai-human-reviewed` | AI-generated, human-reviewed with minimal changes |
-| `ai-generated` | AI-generated, no significant human editing |
+| `human` | Content created entirely by humans, no AI tools used in creation |
+| `ai-assisted` | Human-created with AI assistance (research, editing, suggestions) |
+| `ai-created` | AI-generated with human oversight (editing, review, approval) |
+| `ai-generated` | AI-generated with no meaningful human input |
 
 ### Placement
 
@@ -34,7 +33,7 @@ For L2 conformance, the meta tag is supplemented (not replaced) by JSON-LD:
 
 ```html
 <head>
-  <meta name="openorigin" content="human-ai-assisted">
+  <meta name="openorigin" content="ai-assisted">
   <script type="application/ld+json">
     { "@context": "https://openorigin.dev/schema/v1", ... }
   </script>

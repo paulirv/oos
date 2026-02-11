@@ -35,7 +35,7 @@ Structured breakdown of roles, tools, and process. Builds on all L1 criteria.
 {
   "@context": "https://openorigin.dev/schema/v1",
   "@type": "OpenOrigin",
-  "origin": "human-ai-assisted",
+  "origin": "ai-assisted",
   "author": {
     "name": "Jane Smith",
     "role": "primary-author"

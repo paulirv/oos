@@ -12,7 +12,7 @@ YAML frontmatter in content files provides origin declarations at the source lev
 
 ```yaml
 ---
-openorigin: human-ai-assisted
+openorigin: ai-assisted
 ---
 ```
 
@@ -20,7 +20,7 @@ openorigin: human-ai-assisted
 
 ```yaml
 ---
-openorigin: human-ai-assisted
+openorigin: ai-assisted
 openorigin_detail:
   conformance: L2
   author:

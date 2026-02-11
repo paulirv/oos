@@ -25,7 +25,7 @@ A plain-language description of content origin:
 ### Layer 2: Machine-Readable Declaration
 Structured metadata in HTML, HTTP headers, or JSON-LD:
 ```html
-<meta name="openorigin" content="human-ai-assisted">
+<meta name="openorigin" content="ai-assisted">
 ```
 
 ### Layer 3: Detailed Specification

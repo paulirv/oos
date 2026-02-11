@@ -20,7 +20,7 @@ Complete provenance chain with process narrative and audit trail. Builds on all 
 {
   "@context": "https://openorigin.dev/schema/v1",
   "@type": "OpenOrigin",
-  "origin": "human-ai-assisted",
+  "origin": "ai-assisted",
   "conformance": "L3",
   "author": {
     "name": "Jane Smith",
@@ -52,7 +52,7 @@ Complete provenance chain with process narrative and audit trail. Builds on all 
   },
   "date": "2026-02-10",
   "history": [
-    {"date": "2026-02-10", "origin": "human-ai-assisted", "note": "Initial publication"}
+    {"date": "2026-02-10", "origin": "ai-assisted", "note": "Initial publication"}
   ]
 }
 ```
