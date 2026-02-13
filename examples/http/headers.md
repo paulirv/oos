@@ -34,7 +34,7 @@ OpenOrigin: ai-created
   "_openorigin": {
     "category": "ai-created",
     "tools": [{"name": "Claude", "role": "drafting"}],
-    "author": {"name": "API Consumer", "role": "reviewer"}
+    "authors": [{"name": "API Consumer", "role": "reviewer"}]
   }
 }
 ```

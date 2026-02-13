@@ -49,6 +49,14 @@ L3 ⊃ L2 ⊃ L1
 - L2 conformance: meets all L1 AND L2 success criteria
 - L3 conformance: meets all L1, L2, AND L3 success criteria
 
+## Design Properties
+
+The following are properties of the specification itself, not requirements on individual content items:
+
+- **Progressive superset:** Higher conformance levels add requirements; they do not replace or invalidate lower-level declarations. An L1 declaration is valid on its own, without L2 or L3 data present.
+- **Minimal entry point:** L1 conformance is achievable with a single declaration element. The specification is designed so that the simplest valid implementation is trivially simple.
+- **Format neutrality:** Any recognized format (see [Recognized Formats](definitions.md#recognized-formats)) is a valid path to conformance at any level for which it is sufficient. No format is privileged over another.
+
 ## Validation
 
 ### Automated Validation

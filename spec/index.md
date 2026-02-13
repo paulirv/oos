@@ -8,6 +8,10 @@
 
 OpenOrigin defines a standardized way to declare the origin and creation process of web content. It provides machine-readable, implementable, and auditable declarations that describe how content was created — including the roles of human authors and AI tools.
 
+## Terminology
+
+See [Terminology and Definitions](definitions.md) for formal definitions of key terms and normative language conventions used in this specification.
+
 ## Conformance Levels
 
 - **[Level 1 (Basic)](success-criteria/level-1.md)** — One declaration. Origin category.

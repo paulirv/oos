@@ -6,38 +6,36 @@ Complete provenance chain with process narrative and audit trail. Builds on all 
 
 | ID | Guideline | Criterion |
 |----|-----------|-----------|
-| 1.1.3 | Origin Declaration | Content includes a complete creation process narrative |
-| 1.2.2 | Authorship Attribution | Specific contributions of each human participant are described |
-| 1.3.2 | Tool Disclosure | Tool versions, configurations, and specific usage are documented |
-| 2.1.2 | Truthful Declaration | Publisher maintains records supporting the declared origin |
-| 2.2.2 | Role Accuracy | Human and AI contributions are individually characterized |
-| 2.3.2 | Versioning | Declaration history is preserved when content is substantially revised |
-| 4.1.3 | Progressive Complexity | L3 declarations include all L1 and L2 required fields |
+| 1.1.3 | Origin Declaration | Declaration MUST include a process description with named stages and actors |
+| 1.2.2 | Authorship Attribution | Specific contributions of each human participant MUST be described |
+| 1.3.2 | Tool Disclosure | Tool versions and specific usage MUST be documented |
+| 2.1.2 | Truthful Declaration | Publisher MUST maintain records supporting the declared origin (non-machine-testable) |
+| 2.2.2 | Role Accuracy | Human and AI contributions MUST be individually characterized |
+| 2.3.2 | Versioning | Declaration history MUST be preserved when content is substantially revised |
+| 4.1.2 | Progressive Complexity | L3 declarations MUST include all L1 and L2 required fields |
 
 ## What L3 Looks Like
 
 ```json
 {
   "@context": "https://openorigin.dev/schema/v1",
-  "@type": "OpenOrigin",
-  "origin": "ai-assisted",
+  "@type": "ContentOrigin",
   "conformance": "L3",
-  "author": {
-    "name": "Jane Smith",
-    "role": "primary-author",
-    "contributions": ["outline", "research direction", "final editing", "fact verification"]
-  },
+  "origin": "ai-assisted",
+  "authors": [
+    {
+      "name": "Jane Smith",
+      "role": "author",
+      "contributions": ["outline", "research direction", "final editing", "fact verification"]
+    }
+  ],
   "tools": [
     {
       "name": "Claude",
       "provider": "Anthropic",
       "version": "Opus 4",
       "role": "drafting",
-      "usage": "Generated initial draft from author's outline and notes",
-      "configuration": {
-        "temperature": "default",
-        "systemPrompt": false
-      }
+      "usage": "Generated initial draft from author's outline and notes"
     }
   ],
   "process": {
@@ -50,7 +48,8 @@ Complete provenance chain with process narrative and audit trail. Builds on all 
       {"stage": "review", "actor": "human", "description": "Author fact-checked all claims"}
     ]
   },
-  "date": "2026-02-10",
+  "datePublished": "2026-02-10",
+  "dateModified": "2026-02-10",
   "history": [
     {"date": "2026-02-10", "origin": "ai-assisted", "note": "Initial publication"}
   ]

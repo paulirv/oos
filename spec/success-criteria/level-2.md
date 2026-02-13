@@ -6,17 +6,19 @@ Structured breakdown of roles, tools, and process. Builds on all L1 criteria.
 
 | ID | Guideline | Criterion |
 |----|-----------|-----------|
-| 1.1.2 | Origin Declaration | Content includes a detailed origin breakdown |
-| 1.2.1 | Authorship Attribution | Human author or editor is named or identified by role |
-| 1.3.1 | Tool Disclosure | AI tools used are identified by name |
-| 2.2.1 | Role Accuracy | AI role is described using defined role categories |
-| 2.3.1 | Versioning | Declaration includes a date or version indicator |
-| 3.1.2 | Structured Format | Declaration validates against the OpenOrigin schema |
-| 3.2.2 | Discoverability | Declaration is accessible without JavaScript execution |
-| 3.3.2 | Interoperability | Declarations are equivalent across formats used |
-| 4.1.2 | Progressive Complexity | L2 declarations include all L1 required fields |
+| 1.1.2 | Origin Declaration | Content MUST include a structured origin breakdown with roles and tools |
+| 1.2.1 | Authorship Attribution | Human author or editor MUST be named or identified by role |
+| 1.3.1 | Tool Disclosure | AI tools used MUST be identified by name; if no AI tools were used, the tools array MUST be empty or omitted |
+| 2.2.1 | Role Accuracy | AI role MUST be described using the defined L2 role vocabulary |
+| 2.3.1 | Versioning | Declaration MUST include a date indicating when the declaration was created or last updated |
+| 3.1.2 | Structured Format | Declaration MUST validate against the OpenOrigin schema |
+| 3.2.2 | Discoverability | Declaration MUST be accessible without JavaScript execution |
+| 3.3.1 | Interoperability | When multiple formats are used, declarations MUST convey the same origin information |
+| 4.1.1 | Progressive Complexity | L2 declarations MUST include all L1 required fields |
 
 ## AI Role Categories (L2 Vocabulary)
+
+Declarations MUST use one or more values from this vocabulary. This vocabulary is extensible: implementations MAY include additional role values prefixed with `x-` (e.g., `x-image-generation`). Future versions of this specification MAY add new standard values.
 
 | Value | Meaning |
 |-------|---------|
@@ -29,17 +31,24 @@ Structured breakdown of roles, tools, and process. Builds on all L1 criteria.
 | `coding` | AI used for code generation or assistance |
 | `review` | AI used for fact-checking, proofreading, or quality review |
 
+### When Origin Is `human`
+
+When the L1 origin category is `human`, L2 conformance still requires authorship attribution (1.2.1) and a declaration date (2.3.1). The `tools` array SHOULD be omitted or empty, and no AI role declaration is required. SC 1.3.1 and 2.2.1 are satisfied by the absence of AI tools.
+
 ## What L2 Looks Like
 
 ```json
 {
   "@context": "https://openorigin.dev/schema/v1",
-  "@type": "OpenOrigin",
+  "@type": "ContentOrigin",
+  "conformance": "L2",
   "origin": "ai-assisted",
-  "author": {
-    "name": "Jane Smith",
-    "role": "primary-author"
-  },
+  "authors": [
+    {
+      "name": "Jane Smith",
+      "role": "author"
+    }
+  ],
   "tools": [
     {
       "name": "Claude",
@@ -47,6 +56,7 @@ Structured breakdown of roles, tools, and process. Builds on all L1 criteria.
       "role": "editing"
     }
   ],
-  "date": "2026-02-10"
+  "datePublished": "2026-02-10",
+  "dateModified": "2026-02-10"
 }
 ```

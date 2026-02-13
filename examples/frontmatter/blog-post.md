@@ -5,13 +5,15 @@ author: Jane Smith
 openorigin: ai-assisted
 openorigin_detail:
   conformance: L2
-  author:
-    name: Jane Smith
-    role: primary-author
+  authors:
+    - name: Jane Smith
+      role: author
   tools:
     - name: Claude
       provider: Anthropic
       role: editing
+  datePublished: 2026-02-10
+  dateModified: 2026-02-10
 ---
 
 # Example Blog Post

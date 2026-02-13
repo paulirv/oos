@@ -6,14 +6,10 @@ The minimum viable declaration. One element declaring content origin category.
 
 | ID | Guideline | Criterion |
 |----|-----------|-----------|
-| 1.1.1 | Origin Declaration | Content includes a basic origin category declaration |
-| 2.1.1 | Truthful Declaration | The declared origin category accurately reflects the creation process |
-| 3.1.1 | Structured Format | Declaration uses a recognized OpenOrigin format |
-| 3.2.1 | Discoverability | Declaration is in a standard location for its format |
-| 3.3.1 | Interoperability | At least one recognized format is used |
-| 4.1.1 | Progressive Complexity | L1 declarations are valid without L2/L3 data |
-| 4.2.1 | Minimal Burden | Conformance is achievable with a single declaration element |
-| 4.3.1 | Implementation Flexibility | Any recognized format achieves conformance |
+| 1.1.1 | Origin Declaration | Content MUST include an origin category from the L1 vocabulary |
+| 2.1.1 | Truthful Declaration | The declared origin category MUST accurately reflect the creation process |
+| 3.1.1 | Structured Format | Declaration MUST use a recognized OpenOrigin format |
+| 3.2.1 | Discoverability | Declaration MUST be in a standard location for its format |
 
 ## Origin Categories (L1 Vocabulary)
 
