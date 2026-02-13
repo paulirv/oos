@@ -39,10 +39,12 @@ JSON-LD (JavaScript Object Notation for Linked Data) provides a rich, structured
     "@type": "oo:ContentOrigin",
     "oo:category": "ai-assisted",
     "oo:conformance": "L2",
-    "oo:author": {
-      "name": "Jane Smith",
-      "role": "primary-author"
-    },
+    "oo:authors": [
+      {
+        "name": "Jane Smith",
+        "role": "author"
+      }
+    ],
     "oo:tools": [
       {
         "name": "Claude",
@@ -50,7 +52,8 @@ JSON-LD (JavaScript Object Notation for Linked Data) provides a rich, structured
         "role": "research"
       }
     ],
-    "oo:date": "2026-02-10"
+    "oo:datePublished": "2026-02-10",
+    "oo:dateModified": "2026-02-10"
   }
 }
 </script>
@@ -64,11 +67,14 @@ The OpenOrigin JSON-LD context defines:
 |----------|------|----|----|-----|
 | `category` | string (enum) | Required | Required | Required |
 | `conformance` | string (L1/L2/L3) | Optional | Required | Required |
-| `author` | object | — | Required | Required |
-| `tools` | array | — | Required | Required |
-| `date` | date | — | Required | Required |
+| `authors` | array of objects | — | Required | Required |
+| `tools` | array of objects | — | Required* | Required |
+| `datePublished` | date (ISO 8601) | — | Required | Required |
+| `dateModified` | date (ISO 8601) | — | Optional | Required |
 | `process` | object | — | — | Required |
 | `history` | array | — | — | Required |
+
+*When origin is `human`, `tools` MAY be omitted or empty.
 
 ## Benefits
 

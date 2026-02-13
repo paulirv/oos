@@ -51,10 +51,18 @@ See [Conformance](conformance.md) for details on claiming conformance.
 
 ## Techniques
 
+### Implementation Formats
 - [HTML Meta Tag](techniques/html-meta-tag.md)
 - [JSON-LD Structured Data](techniques/json-ld.md)
 - [HTTP Headers](techniques/http-header.md)
 - [Frontmatter](techniques/frontmatter.md)
+
+### Supporting Techniques
+- [Role Vocabulary](techniques/role-vocabulary.md)
+- [Version History](techniques/version-history.md)
+- [Process Log](techniques/process-log.md)
+- [Conformance Testing](techniques/conformance-testing.md)
+- [Quick Start](techniques/quick-start.md)
 
 ## Three Layers
 
