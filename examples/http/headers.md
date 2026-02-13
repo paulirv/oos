@@ -16,7 +16,7 @@ Using the Structured Fields syntax (RFC 8941):
 HTTP/1.1 200 OK
 Content-Type: application/json
 OpenOrigin: ai-assisted
-OpenOrigin-Detail: category="ai-assisted"; author="Jane Smith"; tool="Claude"; tool-role="research"; date="2026-02-10"
+OpenOrigin-Detail: origin="ai-assisted"; author="Jane Smith"; tool="Claude"; tool-role="research"; date="2026-02-10"
 ```
 
 ## API Response Example
@@ -32,7 +32,7 @@ OpenOrigin: ai-created
   "title": "Generated Report",
   "content": "...",
   "_openorigin": {
-    "category": "ai-created",
+    "origin": "ai-created",
     "tools": [{"name": "Claude", "role": "drafting"}],
     "authors": [{"name": "API Consumer", "role": "reviewer"}]
   }

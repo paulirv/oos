@@ -32,7 +32,7 @@ Define new properties within the schema.org ecosystem:
   "author": {"@type": "Person", "name": "Jane Smith"},
   "openOrigin": {
     "@type": "ContentOrigin",
-    "category": "ai-assisted",
+    "origin": "ai-assisted",
     "tools": [...]
   }
 }

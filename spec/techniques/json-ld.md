@@ -15,7 +15,7 @@ JSON-LD (JavaScript Object Notation for Linked Data) provides a rich, structured
 {
   "@context": "https://openorigin.dev/schema/v1",
   "@type": "ContentOrigin",
-  "category": "ai-assisted"
+  "origin": "ai-assisted"
 }
 </script>
 ```
@@ -37,7 +37,7 @@ JSON-LD (JavaScript Object Notation for Linked Data) provides a rich, structured
   },
   "oo:origin": {
     "@type": "oo:ContentOrigin",
-    "oo:category": "ai-assisted",
+    "oo:origin": "ai-assisted",
     "oo:conformance": "L2",
     "oo:authors": [
       {
@@ -65,7 +65,7 @@ The OpenOrigin JSON-LD context defines:
 
 | Property | Type | L1 | L2 | L3 |
 |----------|------|----|----|-----|
-| `category` | string (enum) | Required | Required | Required |
+| `origin` | string (enum) | Required | Required | Required |
 | `conformance` | string (L1/L2/L3) | Optional | Required | Required |
 | `authors` | array of objects | — | Required | Required |
 | `tools` | array of objects | — | Required* | Required |

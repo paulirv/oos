@@ -1,0 +1,58 @@
+{
+  "@context": {
+    "oo": "https://openorigin.dev/schema/v1#",
+    "schema": "https://schema.org/",
+
+    "ContentOrigin": "oo:ContentOrigin",
+    "Author": "oo:Author",
+    "Tool": "oo:Tool",
+    "ProcessStage": "oo:ProcessStage",
+    "HistoryEntry": "oo:HistoryEntry",
+
+    "origin": "oo:origin",
+    "conformance": "oo:conformance",
+    "authors": {
+      "@id": "oo:authors",
+      "@container": "@set"
+    },
+    "tools": {
+      "@id": "oo:tools",
+      "@container": "@set"
+    },
+    "datePublished": {
+      "@id": "oo:datePublished",
+      "@type": "schema:Date"
+    },
+    "dateModified": {
+      "@id": "oo:dateModified",
+      "@type": "schema:Date"
+    },
+    "process": "oo:process",
+    "history": {
+      "@id": "oo:history",
+      "@container": "@list"
+    },
+
+    "name": "oo:name",
+    "role": "oo:role",
+    "provider": "oo:provider",
+    "version": "oo:version",
+    "usage": "oo:usage",
+    "contributions": {
+      "@id": "oo:contributions",
+      "@container": "@set"
+    },
+    "description": "oo:description",
+    "stages": {
+      "@id": "oo:stages",
+      "@container": "@list"
+    },
+    "stage": "oo:stage",
+    "actor": "oo:actor",
+    "date": {
+      "@id": "oo:date",
+      "@type": "schema:Date"
+    },
+    "note": "oo:note"
+  }
+}

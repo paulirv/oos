@@ -22,7 +22,7 @@ Same controlled vocabulary as the HTML meta tag.
 
 ```http
 OpenOrigin: ai-assisted
-OpenOrigin-Detail: category="ai-assisted"; author="Jane Smith"; tool="Claude"; tool-role="research"
+OpenOrigin-Detail: origin="ai-assisted"; author="Jane Smith"; tool="Claude"; tool-role="research"
 ```
 
 The `OpenOrigin-Detail` header uses Structured Fields syntax (RFC 8941).

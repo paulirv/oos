@@ -1,0 +1,226 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openorigin.dev/schema/v1/openorigin.schema.json",
+  "title": "OpenOrigin Declaration",
+  "description": "Schema for validating OpenOrigin content origin declarations at L1, L2, and L3 conformance levels.",
+
+  "$defs": {
+    "originCategory": {
+      "type": "string",
+      "enum": ["human", "ai-assisted", "ai-created", "ai-generated"],
+      "description": "The L1 origin category describing who drove the content creation process."
+    },
+
+    "conformanceLevel": {
+      "type": "string",
+      "enum": ["L1", "L2", "L3"],
+      "description": "The conformance level claimed by this declaration."
+    },
+
+    "aiRole": {
+      "type": "string",
+      "description": "AI tool role from the L2 vocabulary. Standard values or x- prefixed extensions.",
+      "anyOf": [
+        { "enum": ["none", "research", "ideation", "drafting", "editing", "translation", "coding", "review"] },
+        { "pattern": "^x-.+" }
+      ]
+    },
+
+    "authorRole": {
+      "type": "string",
+      "description": "Human contributor role. Standard values or x- prefixed extensions.",
+      "anyOf": [
+        { "enum": ["author", "editor", "reviewer", "translator", "curator", "approver"] },
+        { "pattern": "^x-.+" }
+      ]
+    },
+
+    "isoDate": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}(T\\d{2}:\\d{2}(:\\d{2})?(\\.\\d+)?(Z|[+-]\\d{2}:\\d{2})?)?$",
+      "description": "ISO 8601 date or datetime string."
+    },
+
+    "author": {
+      "type": "object",
+      "description": "A human contributor to the content.",
+      "properties": {
+        "name": { "type": "string", "description": "Name of the contributor." },
+        "role": { "$ref": "#/$defs/authorRole" }
+      },
+      "anyOf": [
+        { "required": ["name"] },
+        { "required": ["role"] }
+      ],
+      "additionalProperties": false
+    },
+
+    "authorL3": {
+      "type": "object",
+      "description": "A human contributor with detailed contributions (L3).",
+      "properties": {
+        "name": { "type": "string", "description": "Name of the contributor." },
+        "role": { "$ref": "#/$defs/authorRole" },
+        "contributions": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1,
+          "description": "Specific contributions made by this author."
+        }
+      },
+      "required": ["contributions"],
+      "anyOf": [
+        { "required": ["name"] },
+        { "required": ["role"] }
+      ],
+      "additionalProperties": false
+    },
+
+    "tool": {
+      "type": "object",
+      "description": "An AI tool used in the content creation process.",
+      "properties": {
+        "name": { "type": "string", "description": "Name of the tool." },
+        "provider": { "type": "string", "description": "Company or organization that provides the tool." },
+        "role": { "$ref": "#/$defs/aiRole" }
+      },
+      "required": ["name", "role"],
+      "additionalProperties": false
+    },
+
+    "toolL3": {
+      "type": "object",
+      "description": "An AI tool with version and usage details (L3).",
+      "properties": {
+        "name": { "type": "string", "description": "Name of the tool." },
+        "provider": { "type": "string", "description": "Company or organization that provides the tool." },
+        "role": { "$ref": "#/$defs/aiRole" },
+        "version": { "type": "string", "description": "Version of the tool used." },
+        "usage": { "type": "string", "description": "Description of how the tool was used." }
+      },
+      "required": ["name", "role", "version", "usage"],
+      "additionalProperties": false
+    },
+
+    "processStage": {
+      "type": "object",
+      "description": "A stage in the content creation process.",
+      "properties": {
+        "stage": { "type": "string", "description": "Name of the process stage." },
+        "actor": {
+          "type": "string",
+          "enum": ["human", "ai"],
+          "description": "Whether a human or AI performed this stage."
+        },
+        "description": { "type": "string", "description": "Description of what happened in this stage." }
+      },
+      "required": ["stage", "actor", "description"],
+      "additionalProperties": false
+    },
+
+    "process": {
+      "type": "object",
+      "description": "Description of the content creation process (L3).",
+      "properties": {
+        "description": { "type": "string", "description": "Narrative description of the creation process." },
+        "stages": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/processStage" },
+          "minItems": 1,
+          "description": "Ordered list of stages in the creation process."
+        }
+      },
+      "required": ["description", "stages"],
+      "additionalProperties": false
+    },
+
+    "historyEntry": {
+      "type": "object",
+      "description": "A record of a significant change to the content or its declaration.",
+      "properties": {
+        "date": { "$ref": "#/$defs/isoDate" },
+        "origin": { "$ref": "#/$defs/originCategory" },
+        "note": { "type": "string", "description": "Brief description of what changed." }
+      },
+      "required": ["date", "origin", "note"],
+      "additionalProperties": false
+    },
+
+    "L1": {
+      "type": "object",
+      "description": "OpenOrigin Level 1 (Basic) declaration.",
+      "properties": {
+        "@context": {},
+        "@type": { "const": "ContentOrigin" },
+        "origin": { "$ref": "#/$defs/originCategory" }
+      },
+      "required": ["@context", "@type", "origin"],
+      "additionalProperties": false
+    },
+
+    "L2": {
+      "type": "object",
+      "description": "OpenOrigin Level 2 (Detailed) declaration.",
+      "properties": {
+        "@context": {},
+        "@type": { "const": "ContentOrigin" },
+        "origin": { "$ref": "#/$defs/originCategory" },
+        "conformance": { "const": "L2" },
+        "authors": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/author" },
+          "minItems": 1,
+          "description": "Human contributors to the content."
+        },
+        "tools": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/tool" },
+          "description": "AI tools used in the creation process."
+        },
+        "datePublished": { "$ref": "#/$defs/isoDate" },
+        "dateModified": { "$ref": "#/$defs/isoDate" }
+      },
+      "required": ["@context", "@type", "origin", "conformance", "authors", "datePublished"],
+      "additionalProperties": false
+    },
+
+    "L3": {
+      "type": "object",
+      "description": "OpenOrigin Level 3 (Full) declaration.",
+      "properties": {
+        "@context": {},
+        "@type": { "const": "ContentOrigin" },
+        "origin": { "$ref": "#/$defs/originCategory" },
+        "conformance": { "const": "L3" },
+        "authors": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/authorL3" },
+          "minItems": 1,
+          "description": "Human contributors with detailed contributions."
+        },
+        "tools": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/toolL3" },
+          "description": "AI tools with version and usage details."
+        },
+        "datePublished": { "$ref": "#/$defs/isoDate" },
+        "dateModified": { "$ref": "#/$defs/isoDate" },
+        "process": { "$ref": "#/$defs/process" },
+        "history": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/historyEntry" },
+          "minItems": 1,
+          "description": "Record of significant changes to the declaration."
+        }
+      },
+      "required": ["@context", "@type", "origin", "conformance", "authors", "datePublished", "dateModified", "process", "history"],
+      "additionalProperties": false
+    }
+  },
+
+  "oneOf": [
+    { "$ref": "#/$defs/L1" },
+    { "$ref": "#/$defs/L2" },
+    { "$ref": "#/$defs/L3" }
+  ]
+}
